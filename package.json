@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "recuperable",
+  "main": "weatherApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "browserify src/weatherApp.js -o dist/index.js -t [ babelify --presets [ es2015 ] ]",
+    "minify": "uglifyjs --compress --mangle -- dist/index.js > dist/index.min.js",
+    "build": "npm run compile && npm run minify"
+  },
+  "author": "Jesus Coca Haro",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^16.5.0",
+    "uglify-js": "^2.8.29"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.3"
+  }
+}
